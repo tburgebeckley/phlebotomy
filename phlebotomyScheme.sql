@@ -1,10 +1,10 @@
-CREATE TABLE doctor (
+CREATE TABLE IF NOT EXISTS doctor (
     name varchar(50),
     practiceName varchar(50),
     PRIMARY KEY (name, practiceName)
 );
 
-CREATE TABLE specialist (
+CREATE TABLE IF NOT EXISTS specialist (
     name varchar(50),
     practiceName varchar(50),
     specialty varchar(50),
@@ -12,14 +12,14 @@ CREATE TABLE specialist (
     PRIMARY KEY (name, practiceName)
 );
 
-CREATE TABLE phlebotomist (
+CREATE TABLE IF NOT EXISTS phlebotomist (
     name varchar(50),
     clinic varchar(50),
 
     PRIMARY KEY(name, clinic)
 );
 
-CREATE TABLE address (
+CREATE TABLE IF NOT EXISTS address (
     id int NOT NULL AUTO_INCREMENT,
     street varchar(25),
     city varchar(25),
@@ -29,7 +29,7 @@ CREATE TABLE address (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE insuranceCompany (
+CREATE TABLE IF NOT EXISTS insuranceCompany (
     name varchar(50),
     network varchar(50),
     address$id int,
