@@ -1,4 +1,7 @@
-<<<<<<< HEAD
+CREATE DATABASE IF NOT EXISTS phlebotomy;
+
+USING phlebotomy;
+
 CREATE TABLE IF NOT EXISTS invoice(
 	id int NOT NULL AUTO_INCREMENT, 
 	visit$id int NOT NULL, 
@@ -36,7 +39,7 @@ CREATE TABLE IF NOT EXISTS consults(
 	FOREIGN KEY(doctor$name) REFERENCES doctor(name)
 	FOREIGN KEY(doctor$practiceName) REFERENCES doctor(practiceName)
 );
-=======
+
 CREATE TABLE IF NOT EXISTS doctor (
     name varchar(50),
     practiceName varchar(50),
@@ -151,4 +154,3 @@ CREATE TABLE IF NOT EXISTS consults(
 	FOREIGN KEY(doctor$practiceName) REFERENCES doctor(practiceName)
 );
 
->>>>>>> 27ec9e87862a332648aca8b370398339af52102b
