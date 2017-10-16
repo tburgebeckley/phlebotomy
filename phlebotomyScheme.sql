@@ -1,93 +1,54 @@
 CREATE DATABASE IF NOT EXISTS phlebotomy;
 
-USING phlebotomy;
+USE phlebotomy;
 
 
 CREATE TABLE IF NOT EXISTS doctor (
-    name varchar(50),
-    practiceName varchar(50),
+    name varchar(50) NOT NULL,
+    practiceName varchar(50) NOT NULL,
     PRIMARY KEY (name, practiceName)
 );
 
 CREATE TABLE IF NOT EXISTS specialist (
-    name varchar(50),
-    practiceName varchar(50),
-    specialty varchar(50),
+    name varchar(50) NOT NULL,
+    practiceName varchar(50) NOT NULL,
+    specialty varchar(50) NOT NULL,
 
     PRIMARY KEY (name, practiceName)
 );
 
 CREATE TABLE IF NOT EXISTS phlebotomist (
-    name varchar(50),
-    clinic varchar(50),
+    name varchar(50) NOT NULL,
+    clinic varchar(50) NOT NULL,
 
     PRIMARY KEY(name, clinic)
 );
 
 CREATE TABLE IF NOT EXISTS address (
     id int NOT NULL AUTO_INCREMENT,
-    street varchar(25),
-    city varchar(25),
-    state varchar(2),
-    zip varchar(9),
+    street varchar(25) NOT NULL,
+    city varchar(25) NOT NULL,
+    state varchar(2) NOT NULL,
+    zip varchar(9) NOT NULL,
 
     PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS insuranceCompany (
-    name varchar(50),
-    network varchar(50),
-    address$id int,
+    name varchar(50) NOT NULL,
+    network varchar(50) NOT NULL,
+    `address$id` int NOT NULL,
 
     PRIMARY KEY (name, network),
-    FOREIGN KEY (address$id) REFERENCES (address.id)
+    FOREIGN KEY (`address$id`) REFERENCES address(id)
 );
 CREATE TABLE IF NOT EXISTS practicesAt(
-    doctor$name VARCHAR(50) NOT NULL,
-    doctor$practiceName VARCHAR(50) NOT NULL,
-    address$id INT NOT NULL,
-    PRIMARY KEY (doctor$name, doctor$practiceName, address$id),
-    FOREIGN KEY doctor$name REFERENCES doctor.name,
-    FOREIGN KEY doctor$practiceName REFERENCES doctor.practiceName,
-    FOREIGN KEY address$id REFERENCES address.id
-);
-
-
-CREATE TABLE IF NOT EXISTS livesAt(
-       patient$id INT NOT NULL,
-       address$id INT NOT NULL,
-       PRIMARY KEY (patient$id, address$id),
-       FOREIGN KEY patient$id REFERENCES patient.id,
-       FOREIGN KEY address$id REFERENCES address.id
-       );
-
-CREATE TABLE IF NOT EXISTS hasA(
-       patient$id INT NOT NULL,
-       visit$id INT NOT NULL,
-       PRIMARY KEY (patient$id, visit$id),
-       FOREIGN KEY patient$id REFERENCES patient.id,
-       FOREIGN KEY visit$id REFERENCES visit.id
-       );
-
-CREATE TABLE IF NOT EXISTS performs(
-       phlebotomist$name VARCHAR(50) NOT NULL,
-       phlebotomist$clinic VARCHAR(50) NOT NULL,
-       visit$id INT NOT NULL,
-       PRIMARY KEY (phelebotomist$name, phlebotomist$clinic, visit$id),
-       FOREIGN KEY phlebotomist$name REFERENCES phlebotomist.name,
-       FOREIGN KEY phlebotomist$clinic REFERENCES phlebotomist.clinic,
-       FOREIGN KEY visit$id REFERENCES visit.id
-       );
-	   
-CREATE TABLE IF NOT EXISTS invoice(
-	id int NOT NULL AUTO_INCREMENT, 
-	visit$id int NOT NULL, 
-	billedDate datetime, 
-	billedAmt float, 
-	message varchar(100), 
-	mileage int,
-	PRIMARY KEY (id),
-	FOREIGN KEY(visit$id) REFERENCES visit(id)
+    `doctor$name` varchar(50) NOT NULL,
+    `doctor$practiceName` varchar(50) NOT NULL,
+    `address$id` int NOT NULL,
+    PRIMARY KEY (`doctor$name`, `doctor$practiceName`, `address$id`),
+    FOREIGN KEY (`doctor$name`, `doctor$practiceName`) REFERENCES doctor(name, practiceName),
+    FOREIGN KEY (`address$id`) REFERENCES address(id)
 );
 
 CREATE TABLE IF NOT EXISTS patient(
@@ -98,22 +59,71 @@ CREATE TABLE IF NOT EXISTS patient(
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE IF NOT EXISTS livesAt(
+       `patient$id` int NOT NULL,
+       `address$id` int NOT NULL,
+       PRIMARY KEY (`patient$id`, `address$id`),
+       FOREIGN KEY (`patient$id`) REFERENCES patient(id),
+       FOREIGN KEY (`address$id`) REFERENCES address(id)
+);
+
+CREATE TABLE IF NOT EXISTS visit(
+	id int NOT NULL AUTO_INCREMENT,
+	network varchar(50) NOT NULL,
+	vistDate datetime NOT NULL,
+	testType varchar(50) NOT NULL,
+	`patient$id` int NOT NULL,
+	`phlebotomist$name` varchar(50),
+
+	PRIMARY KEY (id),
+
+	FOREIGN KEY (`patient$id`) REFERENCES patient(id),
+	FOREIGN KEY (`phlebotomist$name`) REFERENCES phlebotomist(name)
+);
+
+CREATE TABLE IF NOT EXISTS hasA(
+       `patient$id` int NOT NULL,
+       `visit$id` int NOT NULL,
+       PRIMARY KEY (`patient$id`, `visit$id`),
+       FOREIGN KEY (`patient$id`) REFERENCES patient(id),
+       FOREIGN KEY (`visit$id`) REFERENCES visit(id)
+       );
+
+CREATE TABLE IF NOT EXISTS performs(
+       `phlebotomist$name` varchar(50) NOT NULL,
+       `phlebotomist$clinic` varchar(50) NOT NULL,
+       `visit$id` int NOT NULL,
+       PRIMARY KEY (`phlebotomist$name`, `phlebotomist$clinic`, `visit$id`),
+       FOREIGN KEY (`phlebotomist$name`, `phlebotomist$clinic`) REFERENCES phlebotomist(name, clinic),
+       FOREIGN KEY (`visit$id`) REFERENCES visit(id)
+       );
+	   
+CREATE TABLE IF NOT EXISTS invoice(
+	id int NOT NULL AUTO_INCREMENT, 
+	`visit$id` int NOT NULL, 
+	billedDate datetime, 
+	billedAmt float, 
+	message varchar(100), 
+	mileage int,
+	PRIMARY KEY (id),
+	FOREIGN KEY(`visit$id`) REFERENCES visit(id)
+);
+
 CREATE TABLE IF NOT EXISTS billedTo(
-	insuranceCompany$name:varchar(50), 
-	invoice$id:int,
-	FOREIGN KEY(insuranceCompany$name) REFERENCES vinsuranceCompanyisit(name),
-	FOREIGN KEY(invoice$id) REFERENCES invoice(id)
+	`insuranceCompany$name` varchar(50) NOT NULL, 
+	`invoice$id` int NOT NULL,
+	FOREIGN KEY(`insuranceCompany$name`) REFERENCES insuranceCompany(name),
+	FOREIGN KEY(`invoice$id`) REFERENCES invoice(id)
 );
 
 CREATE TABLE IF NOT EXISTS consults(
-	id:int AUTO_INCREMENT, 
-	patient$id:int, 
-	doctor$name:varchar(50), 
-	doctor$practiceName:varchar(50), 
-	cDate:datetime
-	PRIMARY KEY (id)
-	FOREIGN KEY(patient$id) REFERENCES patient(id)
-	FOREIGN KEY(doctor$name) REFERENCES doctor(name)
-	FOREIGN KEY(doctor$practiceName) REFERENCES doctor(practiceName)
+	id int AUTO_INCREMENT, 
+	`patient$id` int NOT NULL, 
+	`doctor$name` varchar(50) NOT NULL, 
+	`doctor$practiceName` varchar(50) NOT NULL, 
+	cDate datetime,
+	PRIMARY KEY (id),
+	FOREIGN KEY(`patient$id`) REFERENCES patient(id),
+	FOREIGN KEY(`doctor$name`, `doctor$practiceName`) REFERENCES doctor(name, practiceName)
 );
 
