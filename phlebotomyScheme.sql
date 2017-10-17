@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS invoice(
 	billedAmt float, 
 	message varchar(100), 
 	mileage int,
-	PRIMARY KEY (id),
+	PRIMARY KEY (id, `visit$id`),
 	FOREIGN KEY(`visit$id`) REFERENCES visit(id)
 );
 
