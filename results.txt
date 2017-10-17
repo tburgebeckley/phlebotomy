@@ -1,0 +1,144 @@
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+street	varchar(25)	NO		NULL	
+city	varchar(25)	NO		NULL	
+state	varchar(2)	NO		NULL	
+zip	varchar(9)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+insuranceCompany$name	varchar(50)	NO	MUL	NULL	
+invoice$id	int(11)	NO	MUL	NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+patient$id	int(11)	NO	MUL	NULL	
+doctor$name	varchar(50)	NO	MUL	NULL	
+doctor$practiceName	varchar(50)	NO		NULL	
+cDate	datetime	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+name	varchar(50)	NO	PRI	NULL	
+practiceName	varchar(50)	NO	PRI	NULL	
+Field	Type	Null	Key	Default	Extra
+name	varchar(50)	NO	PRI	NULL	
+network	varchar(50)	NO	PRI	NULL	
+address$id	int(11)	NO	MUL	NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+visit$id	int(11)	NO	PRI	NULL	
+billedDate	datetime	YES		NULL	
+billedAmt	float	YES		NULL	
+message	varchar(100)	YES		NULL	
+mileage	int(11)	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+patient$id	int(11)	NO	PRI	NULL	
+address$id	int(11)	NO	PRI	NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+name	varchar(50)	YES		NULL	
+DOB	date	YES		NULL	
+bloodType	varchar(3)	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+phlebotomist$name	varchar(50)	NO	PRI	NULL	
+phlebotomist$clinic	varchar(50)	NO	PRI	NULL	
+visit$id	int(11)	NO	PRI	NULL	
+Field	Type	Null	Key	Default	Extra
+name	varchar(50)	NO	PRI	NULL	
+clinic	varchar(50)	NO	PRI	NULL	
+Field	Type	Null	Key	Default	Extra
+doctor$name	varchar(50)	NO	PRI	NULL	
+doctor$practiceName	varchar(50)	NO	PRI	NULL	
+specialty	varchar(50)	NO		NULL	
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+network	varchar(50)	NO		NULL	
+visitDate	datetime	NO		NULL	
+testType	varchar(50)	NO		NULL	
+patient$id	int(11)	NO	MUL	NULL	
+id	street	city	state	zip
+1	25 Posey Ln	Schenectady	NY	12309
+2	274 Rose Ave	Chicago	IL	60007
+3	3021 N Gold Star Dr	Long Beach	CA	90810
+4	32 N 4th St	Columbus	OH	43215
+5	3901 NW 28th St	Miami	FL	33142
+6	550 S Tyron St	Charleston	NC	28202
+7	899 Oakland Ave	Ann Arbor	MI	48104
+8	800 Washington St	Boston	MA	02111
+9	1701 Trinity St	Austin	TX	78705
+10	900 E 11th Ave	Denver	CO	80218
+11	34800 Bob Wilson Dr	San Diego	CA	92134
+12	298 E Arikara Ave	Bismarck	ND	58501
+13	350 W Thomas Rd	Phoenix	AZ	85013
+14	269 1300 S	Salt Lake City	UT	84115
+15	S 42nd St	Omaha	NE	68198
+16	701 10th St SE	Cedar Rapids	IA	52403
+17	216 S Kingshighway Blvd	St. Louis	MO	63110
+insuranceCompany$name	invoice$id
+Aetna	1
+Blue Cross	2
+Green Square	3
+Orange Triangle	4
+Purple Heart	5
+id	patient$id	doctor$name	doctor$practiceName	cDate
+1	1	John Watson, M.D.	Doctors Plus	NULL
+2	2	Ronald Burns, M.D.	Family Medicine	NULL
+3	3	Steve Simons, M.D.	Doctors Plus	NULL
+4	4	Sheryl Reames, M.D.	Diverse Health Care	NULL
+5	5	Frank Oswaldt, M.D.	Family Care Group	NULL
+name	practiceName
+Frank Oswaldt, M.D.	Family Care Group
+John Watson, M.D.	Doctors Plus
+Ronald Burns, M.D.	Family Medicine
+Sheryl Reames, M.D.	Diverse Health Care
+Steve Simons, M.D.	Doctors Plus
+name	network	address$id
+Aetna	BJC	1
+Blue Cross	Blue Sheild	2
+Green Square	Green Oval	3
+Orange Triangle	Red Circle	4
+Purple Heart	Peach Cube	5
+id	visit$id	billedDate	billedAmt	message	mileage
+1	1	2012-06-18 10:34:09	125.45		18
+2	2	2012-06-18 10:34:11	248.28		12
+3	3	2012-06-18 10:34:13	12.25		2
+4	4	2012-06-18 10:34:15	35.12		14
+5	5	2012-06-18 10:34:17	18.27		12
+patient$id	address$id
+1	6
+2	7
+3	8
+4	9
+5	10
+id	name	DOB	bloodType
+1	Maggie Smith	1993-12-15	O+
+2	Jon Stone	1987-04-16	A+
+3	Josie Rifter	1972-02-13	AB+
+4	Edgar Knowles	1989-05-30	A-
+5	Susan Colburn	1958-02-28	B+
+phlebotomist$name	phlebotomist$clinic	visit$id
+Doogie Howser	WellnessClinic	1
+Bert Macklin	HappyClinic	2
+Sheryl Banks	GetWellClinic	3
+Allan Beck	WellnessClinic	4
+Manuel Murphy	HappyClinic	5
+name	clinic
+Allan Beck	WellnessClinic
+Bert Macklin	HappyClinic
+Doogie Howser	WellnessClinic
+Manuel Murphy	HappyClinic
+Sheryl Banks	GetWellClinic
+doctor$name	doctor$practiceName	address$id
+John Watson, M.D.	Doctors Plus	1
+Ronald Burns, M.D.	Family Medicine	2
+Steve Simons, M.D.	Doctors Plus	3
+Sheryl Reames, M.D.	Diverse Health Care	4
+Frank Oswaldt, M.D.	Family Care Group	5
+doctor$name	doctor$practiceName	specialty
+Frank Oswaldt, M.D.	Family Care Group	Gastroenterologist
+John Watson, M.D.	Doctors Plus	Cardiologist
+Ronald Burns, M.D.	Family Medicine	Urologist
+Sheryl Reames, M.D.	Diverse Health Care	Oncologist
+Steve Simons, M.D.	Doctors Plus	Neurologist
+id	network	visitDate	testType	patient$id
+1	Southwest	2014-02-19 09:30:00	hemoglobin	1
+2	Northwest	2017-01-18 11:45:00	hemoglobin	2
+3	Northeast	2013-06-18 02:30:00	iron	3
+4	Midwest	2015-04-21 10:34:09	glucose	4
+5	Southeast	2016-05-22 10:34:09	infection	5
