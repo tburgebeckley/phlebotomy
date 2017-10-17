@@ -1,4 +1,4 @@
-using phlebotomy;
+USE phlebotomy;
 
 INSERT INTO `practicesAt` (`doctor$name`, `doctor$practiceName`, `address$id`)
 VALUES
