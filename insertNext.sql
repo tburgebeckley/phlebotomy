@@ -32,33 +32,33 @@ VALUES
 	(),
 	();
 
-INSERT INTO `` ()
+INSERT INTO `performs` (`phlebotomist$name`, `phlebotomist$clinic`, `visit$id`)
 VALUES
-	(),
+	('', '', ),
+	('', '', ),
+	('', '', ),
+	('', '', ),
+	('', '', );
+
+INSERT INTO `invoice` (`visit$id`, `billedDate`, `billedAmt`, `message`, `mileage`)
+VALUES
+	(, '20120618 10:34:09 AM', 125.45, '', 18),
 	(),
 	(),
 	(),
 	();
 
-INSERT INTO `` ()
+INSERT INTO `billedTo` (`insuranceCompanyName`, `invoice$id`)
 VALUES
-	(),
+	('', ),
 	(),
 	(),
 	(),
 	();
 
-INSERT INTO `` ()
+INSERT INTO `consults` (`patient$id`, `doctor$name`, `doctor$practiceName`)
 VALUES
-	(),
-	(),
-	(),
-	(),
-	();
-
-INSERT INTO `` ()
-VALUES
-	(),
+	(, '', ''),
 	(),
 	(),
 	(),
