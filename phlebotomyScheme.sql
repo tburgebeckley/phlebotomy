@@ -75,21 +75,11 @@ CREATE TABLE IF NOT EXISTS visit(
 	vistDate datetime NOT NULL,
 	testType varchar(50) NOT NULL,
 	`patient$id` int NOT NULL,
-	`phlebotomist$name` varchar(50),
 
 	PRIMARY KEY (id),
 
-	FOREIGN KEY (`patient$id`) REFERENCES patient(id),
-	FOREIGN KEY (`phlebotomist$name`) REFERENCES phlebotomist(name)
+	FOREIGN KEY (`patient$id`) REFERENCES patient(id)
 );
-
-CREATE TABLE IF NOT EXISTS hasA(
-       `patient$id` int NOT NULL,
-       `visit$id` int NOT NULL,
-       PRIMARY KEY (`patient$id`, `visit$id`),
-       FOREIGN KEY (`patient$id`) REFERENCES patient(id),
-       FOREIGN KEY (`visit$id`) REFERENCES visit(id)
-       );
 
 CREATE TABLE IF NOT EXISTS performs(
        `phlebotomist$name` varchar(50) NOT NULL,
