@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS specialist (
     specialty varchar(50) NOT NULL,
 
     PRIMARY KEY (name, practiceName),
-    FOREIGN KEY (doctor$name, doctor$practiceName) REFERENCES (doctor.name, doctor.practiceName)
+    FOREIGN KEY (doctor$name, doctor$practiceName) REFERENCES doctor(name, practiceName)
 	
 );
 
