@@ -19,10 +19,10 @@ VALUES
 INSERT INTO `visit` (`network`, `visitDate`, `testType`, `patient$id`)
 VALUES
 	('Southwest', '20140219 9:30:00 AM', 'hemoglobin', 1),
-	('', '20120618 10:34:09 AM', '', ),
-	('', '20120618 10:34:09 AM', '', ),
-	('', '20120618 10:34:09 AM', '', ),
-	('', '20120618 10:34:09 AM', '', );
+	('Northwest', '20170118 11:45:00 AM', 'hemoglobin', 2),
+	('Northeast', '20130618 02:30:00 PM', 'iron', 3),
+	('Midwest', '20150421 10:34:09 AM', 'glucose', 4),
+	('Southeast', '20160522 10:34:09 AM', 'infection', 5);
 
 
 INSERT INTO `performs` (`phlebotomist$name`, `phlebotomist$clinic`, `visit$id`)
