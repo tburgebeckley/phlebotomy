@@ -3,7 +3,7 @@ USE phlebotomy;
 DESCRIBE address;
 DESCRIBE billedTo;
 DESCRIBE consults;
-DESCRIBE doctor;;
+DESCRIBE doctor;
 DESCRIBE insuranceCompany;
 DESCRIBE invoice;
 DESCRIBE livesAt;
