@@ -39,18 +39,18 @@ VALUES
 INSERT INTO phlebotomist (name, clinicName)
 VALUES
 	('Doogie Howser', 'WellnessClinic'),
-	(),
-	(),
-	(),
-	();
+	('Ruth Hildebrandt', 'CVS Health'),
+	('Wilson Ames', 'CVS Health'),
+	('Doug Benson', 'TopCare'),
+	('Hilary Dougherty', 'Premier Clinic');
 
 INSERT INTO specialist (name, practiceName, specialty)
 VALUES
 	('Gordon Clark', 'Doctors RUS', 'Eurology'),
-	(),
-	(),
-	(),
-	();
+	('', '', ''),
+	('', '', ''),
+	('', '', ''),
+	('', '', '');
 
 INSERT INTO insuranceCompany (name, network, address$id)
 VALUES
