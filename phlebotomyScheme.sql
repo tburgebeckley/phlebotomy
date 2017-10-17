@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS livesAt(
 CREATE TABLE IF NOT EXISTS visit(
 	id int NOT NULL AUTO_INCREMENT,
 	network varchar(50) NOT NULL,
-	vistDate datetime NOT NULL,
+	visitDate datetime NOT NULL,
 	testType varchar(50) NOT NULL,
 	`patient$id` int NOT NULL,
 

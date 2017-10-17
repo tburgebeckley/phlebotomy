@@ -41,7 +41,7 @@ VALUES
 	(4, '20120618 10:34:15 AM', 35.12, '', 14),
 	(5, '20120618 10:34:17 AM', 18.27, '', 12);
 
-INSERT INTO `billedTo` (`insuranceCompanyName`, `invoice$id`)
+INSERT INTO `billedTo` (`insuranceCompany$name`, `invoice$id`)
 VALUES
 	('Aetna', 1),
 	('Blue Cross',2),
