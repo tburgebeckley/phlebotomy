@@ -44,15 +44,15 @@ VALUES
 	('Allan Beck', 'WellnessClinic'),
 	('Manuel Murphy', 'HappyClinic');
 
-INSERT INTO specialist (name, practiceName, specialty)
+INSERT INTO specialist (`doctor$name`, `doctor$practiceName`, specialty)
 VALUES
-	('Gordon Clark', 'Doctors RUS', 'Eurology'),
-	('Eva Lane', 'Lane MD', 'Cardiology'),
-	('Ira Washington', 'Isocore', 'Neurology'),
-	('Silvia Young', '21st Century Oncology', 'Oncology'),
-	('Gilbert Hancock', 'Hancock Park Assoc', 'Hematology');
+	('John Watson, M.D.', 'Doctors Plus', 'Cardiologist'),
+	('Ronald Burns, M.D.', 'Family Medicine', 'Urologist'),
+	('Steve Simons, M.D.', 'Doctors Plus', 'Neurologist'),
+	('Sheryl Reames, M.D.', 'Diverse Health Care', 'Oncologist'),
+	('Frank Oswaldt, M.D.', 'Family Care Group', 'Gastroenterologist');
 
-INSERT INTO insuranceCompany (name, network, address$id)
+INSERT INTO insuranceCompany (name, network, `address$id`)
 VALUES
 	('Aetna', 'BJC', 1),
 	('Blue Cross', 'Blue Sheild', 2),
