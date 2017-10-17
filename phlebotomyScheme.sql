@@ -10,11 +10,13 @@ CREATE TABLE IF NOT EXISTS doctor (
 );
 
 CREATE TABLE IF NOT EXISTS specialist (
-    name varchar(50) NOT NULL,
-    practiceName varchar(50) NOT NULL,
+    doctor$name varchar(50) NOT NULL,
+    doctor$practiceName varchar(50) NOT NULL,
     specialty varchar(50) NOT NULL,
 
-    PRIMARY KEY (name, practiceName)
+    PRIMARY KEY (name, practiceName),
+    FOREIGN KEY (doctor$name, doctor$practiceName) REFERENCES (doctor.name, doctor.practiceName)
+	
 );
 
 CREATE TABLE IF NOT EXISTS phlebotomist (
