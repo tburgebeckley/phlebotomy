@@ -1,4 +1,4 @@
-using phlebotomy;
+USE phlebotomy;
 
 INSERT INTO patient (name, DOB, bloodType)
 VALUES
@@ -36,7 +36,7 @@ VALUES
 	('701 10th St SE', 'Cedar Rapids', 'IA', '52403'),
 	('216 S Kingshighway Blvd', 'St. Louis', 'MO', '63110');
 
-INSERT INTO phlebotomist (name, clinicName)
+INSERT INTO phlebotomist (name, clinic)
 VALUES
 	('Doogie Howser', 'WellnessClinic'),
 	('Bert Macklin', 'HappyClinic'),
