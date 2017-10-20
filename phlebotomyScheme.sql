@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS phlebotomist (
 
 CREATE TABLE IF NOT EXISTS address (
     id int NOT NULL AUTO_INCREMENT,
-    street varchar(25) NOT NULL,
+    street varchar(50) NOT NULL,
     city varchar(25) NOT NULL,
     state varchar(2) NOT NULL,
     zip varchar(9) NOT NULL,
