@@ -498,7 +498,7 @@ INSERT INTO `address` (`street`,`city`,`state`,`zip`) VALUES
 	('2 Sw Nyberg Rd', 'Elkhart', 'IN', 46514),
 	('89992 E 15th St', 'Alliance', 'NE', 69301),
 	('61556 W 20th Ave', 'Seattle', 'WA', 98104),
-	('63 E Aurora Dr', 'Orlando', 'FL', 32804);
+	('63 E Aurora Dr', 'Orlando', 'FL', 32804),
 	('70 Springview Street','Vienna','Virginia',22184),
 	('07854 Carioca Center','Washington','District of Columbia',20535),
 	('409 Coleman Circle','Minneapolis','Minnesota',55470),
