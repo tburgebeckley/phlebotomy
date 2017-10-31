@@ -1,5 +1,5 @@
 Script started on Tue 31 Oct 2017 04:24:23 AM UTC
-]0;brendan@school: ~brendan@school:~$ mysql -u brshelt -p
+brendan@school:~$ mysql -u brshelt -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 1524
@@ -18,7 +18,7 @@ Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 Database changed
-mysql> SELECT * FROM [K[K[K[K[K[K[K[K count(*) FROM address;
+mysql> SELECT count(*) FROM address;
 +----------+
 | count(*) |
 +----------+
@@ -26,7 +26,7 @@ mysql> SELECT * FROM [K[K[K[K[K[K[K[K count(*) FROM address;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SEEL[K[KLECT count(*) FROM billedTo;
+mysql> SELECT count(*) FROM billedTo;
 +----------+
 | count(*) |
 +----------+
@@ -34,7 +34,7 @@ mysql> SEEL[K[KLECT count(*) FROM billedTo;
 +----------+
 1 row in set (0.03 sec)
 
-mysql> SELECT count(*()[K[K) FROM consults;
+mysql> SELECT count(*) FROM consults;
 +----------+
 | count(*) |
 +----------+
@@ -42,7 +42,7 @@ mysql> SELECT count(*()[K[K) FROM consults;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM consults;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;d;o;c;t;o;r;
+mysql> SELECT count(*) FROM consults;
 +----------+
 | count(*) |
 +----------+
@@ -50,7 +50,7 @@ mysql> SELECT count(*) FROM consults;[1P;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM doctor;[1P;[1P;[1P;[1P;[1P;[1P;i;n;s;u;r;a;n;c;e;C;o;m;p;a;n;y;
+mysql> SELECT count(*) FROM doctor;
 +----------+
 | count(*) |
 +----------+
@@ -58,7 +58,7 @@ mysql> SELECT count(*) FROM doctor;[1P;[1P;[1P;[1P;[1P;[1P;i;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM insuranceCompany;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;i;n;v;o;i;c;e;
+mysql> SELECT count(*) FROM insuranceCompany;
 +----------+
 | count(*) |
 +----------+
@@ -66,7 +66,7 @@ mysql> SELECT count(*) FROM insuranceCompany;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.02 sec)
 
-mysql> SELECT count(*) FROM invoice;[1P;[1P;[1P;[1P;[1P;[1P;[1P;l;i;v;e;s;A;t;
+mysql> SELECT count(*) FROM invoice;
 +----------+
 | count(*) |
 +----------+
@@ -74,7 +74,7 @@ mysql> SELECT count(*) FROM invoice;[1P;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM livesAt;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;a;t;i;e;n;t;
+mysql> SELECT count(*) FROM livesAt;
 +----------+
 | count(*) |
 +----------+
@@ -82,7 +82,7 @@ mysql> SELECT count(*) FROM livesAt;[1P;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM patient;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;e;r;f;o;r;m;s;
+mysql> SELECT count(*) FROM patient;
 +----------+
 | count(*) |
 +----------+
@@ -90,7 +90,7 @@ mysql> SELECT count(*) FROM patient;[1P;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.02 sec)
 
-mysql> SELECT count(*) FROM performs;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;h;l;e;b;o;t;o;m;i;s;t;
+mysql> SELECT count(*) FROM performs;
 +----------+
 | count(*) |
 +----------+
@@ -98,7 +98,7 @@ mysql> SELECT count(*) FROM performs;[1P;[1P;[1P;[1P;[1P;[1P;
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM phlebotomist;[K[K[K[K[K[K[K[K[K[K[K[K[KpracticesAt;
+mysql> SELECT count(*) FROM phlebotomist;
 +----------+
 | count(*) |
 +----------+
@@ -106,7 +106,7 @@ mysql> SELECT count(*) FROM phlebotomist;[K[K[K[K[K[K[K[K[K[
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM practicesAt;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;s;p;e;c;i;a;l;i;s;t;
+mysql> SELECT count(*) FROM practicesAt;
 +----------+
 | count(*) |
 +----------+
@@ -114,7 +114,7 @@ mysql> SELECT count(*) FROM practicesAt;[1P;[1P;[1P;[1P;[1P;[1
 +----------+
 1 row in set (0.00 sec)
 
-mysql> SELECT count(*) FROM specialist;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;v;i;s;i;t;
+mysql> SELECT count(*) FROM specialist;
 +----------+
 | count(*) |
 +----------+
@@ -124,7 +124,7 @@ mysql> SELECT count(*) FROM specialist;[1P;[1P;[1P;[1P;[1P;[1P
 
 mysql> exit
 Bye
-]0;brendan@school: ~brendan@school:~$ exit
+brendan@school:~$ exit
 exit
 
-Script done on Tue 31 Oct 2017 04:26:34 AM UTC
+Script done on Tue 31 Oct 2017 04:33:12 AM UTC
