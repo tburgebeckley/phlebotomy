@@ -1,6 +1,7 @@
 from csv import reader
 import random
 import time
+import datetime
 
 def strTimeProp(start, end, format, prop):
     stime = time.mktime(time.strptime(start, format))
@@ -19,11 +20,10 @@ def randomMessage():
     return messages[index]
 
 def assocDate(row):
-    startDate = row[0:10]
+    date = datetime.datetime.strptime(row[0:10], '%Y-%m-%d')
     offset = random.randrange(5)
-    date = int(startDate[8:10])
-    return startDate[0:-2] + str(date+offset).zfill(2)
-
+    
+    return (date + datetime.timedelta(days=offset)).strftime('%Y-%m-%d')
 
 text = "INSERT INTO invoice (`visit$id`, `billedDate`, `billedAmt`, `message`, `mileage`) VALUES \n"
 v = open("selectedVisits.csv",'r')
