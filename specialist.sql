@@ -1,4 +1,4 @@
-INSERT INTO specialist (`name`, `practiceName`, `specialty`) VALUES
+INSERT INTO specialist (`doctor$name`, `doctor$practiceName`, `specialty`) VALUES
 	('Billie Poser, M.D.', 'Bainbridge Pediatrics','Psychiatry'),
 	('Lyn Brigham, M.D.', 'Center For Genetic Testing At Saint','Dermatology'),
 	('Pearlie Mcelhany, M.D.', 'Trusstek','Oncology'),

@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS phlebotomy;
+CREATE DATABASE IF NOT EXISTS phlebotomyBig;
 
-USE phlebotomy;
+USE phlebotomyBig;
 
 
 CREATE TABLE IF NOT EXISTS doctor (

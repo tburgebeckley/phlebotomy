@@ -1,4 +1,4 @@
-INSERT INTO insuranceCompany (`companyName`,`network`,`address$id`) VALUES
+INSERT INTO insuranceCompany (`name`,`network`,`address$id`) VALUES
        ('Aetna','SW',882),
        ('BlueCross','MW',625),
        ('Anthem','SW',1718),
