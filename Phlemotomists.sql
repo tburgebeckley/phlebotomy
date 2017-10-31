@@ -1,4 +1,4 @@
-INSERT INTO doctor (`name`, `practiceName`) VALUES
+INSERT INTO phlebotomist (`name`, `clinic`) VALUES
 ('Calandra Bohrman', 'Highlands Medical Center'),
 ('Carmelina Morisky', 'Parkview Regional Medical Center'),
 ('Nettie Lawalin', 'St Francis Medical Center'),
