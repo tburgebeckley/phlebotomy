@@ -29,16 +29,16 @@ def getRandomRegion():
 
 
 text = "INSERT INTO visit (`network`, `visitDate`, `testType`, `patient$id`) VALUES \n"
-
+output = ""
 startDate = "2000-01-01"
 endDate = "2017-10-30"
-row = "\t('{}',DATE '{}', '{}', {}),\n"
+row = "\t('{}',DATE '{}', '{}', {});\n"
 for i in range(100000):
     network = getRandomRegion()
     visitDate = randomDate(startDate, endDate, random.random())
     testType = getTestType()
     patient = random.randrange(2000)+1
-    text = text+row.format(network, visitDate, testType, patient)
+    output = output+text+row.format(network, visitDate, testType, patient)
 
-print text
+print output
 
