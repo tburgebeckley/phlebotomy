@@ -33,7 +33,7 @@ with open("consults.sql", "w") as f:
 
     for i in range(0,count):
         dOff = random.randint(1,docsNames-1)
-        pOff = random.randint(0,1999)
-        x = "(" + str(pOff) + ", "+ docsLines[dOff][2:-4] + ", " + str(randomDate(startDate, endDate, random.random())) + "),"
+        pOff = random.randint(1,2000)
+        x = "(" + str(pOff) + ", "+ docsLines[dOff][2:-4] + ", DATE'" + str(randomDate(startDate, endDate, random.random())) + "'),"
 
         print >> f, x
