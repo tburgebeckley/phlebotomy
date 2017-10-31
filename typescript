@@ -1,0 +1,130 @@
+Script started on Tue 31 Oct 2017 04:24:23 AM UTC
+]0;brendan@school: ~brendan@school:~$ mysql -u brshelt -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1524
+Server version: 5.5.57-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use phlebotomyBig;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SELECT * FROM [K[K[K[K[K[K[K[K count(*) FROM address;
++----------+
+| count(*) |
++----------+
+|     2500 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SEEL[K[KLECT count(*) FROM billedTo;
++----------+
+| count(*) |
++----------+
+|   100000 |
++----------+
+1 row in set (0.03 sec)
+
+mysql> SELECT count(*()[K[K) FROM consults;
++----------+
+| count(*) |
++----------+
+|    10000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM consults;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;d;o;c;t;o;r;
++----------+
+| count(*) |
++----------+
+|      500 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM doctor;[1P;[1P;[1P;[1P;[1P;[1P;i;n;s;u;r;a;n;c;e;C;o;m;p;a;n;y;
++----------+
+| count(*) |
++----------+
+|       15 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM insuranceCompany;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;i;n;v;o;i;c;e;
++----------+
+| count(*) |
++----------+
+|   100000 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> SELECT count(*) FROM invoice;[1P;[1P;[1P;[1P;[1P;[1P;[1P;l;i;v;e;s;A;t;
++----------+
+| count(*) |
++----------+
+|     2000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM livesAt;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;a;t;i;e;n;t;
++----------+
+| count(*) |
++----------+
+|     2000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM patient;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;e;r;f;o;r;m;s;
++----------+
+| count(*) |
++----------+
+|   100000 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> SELECT count(*) FROM performs;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;p;h;l;e;b;o;t;o;m;i;s;t;
++----------+
+| count(*) |
++----------+
+|      100 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM phlebotomist;[K[K[K[K[K[K[K[K[K[K[K[K[KpracticesAt;
++----------+
+| count(*) |
++----------+
+|      500 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM practicesAt;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;s;p;e;c;i;a;l;i;s;t;
++----------+
+| count(*) |
++----------+
+|       97 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT count(*) FROM specialist;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;v;i;s;i;t;
++----------+
+| count(*) |
++----------+
+|   100000 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> exit
+Bye
+]0;brendan@school: ~brendan@school:~$ exit
+exit
+
+Script done on Tue 31 Oct 2017 04:26:34 AM UTC
