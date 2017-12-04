@@ -14,6 +14,16 @@
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {
         var_dump($_POST);
+        $patient = $phleb = $test = $network = $date = $amt = $billDate = $msg = $miles = "";
+        $patient = test_input($_POST['patient']);
+        $phleb = test_input($_POST['phleb']);
+        $test = test_input($_POST['test']);
+        $network = test_input($_POST['network']);
+        $date = test_input($_POST['date']);
+        $amt = test_input($_POST['amt']);
+        $billDate = test_input($_POST['billDate']);
+        $msg = test_input($_POST['msg']);
+        $miles = test_input($_POST['miles']);
     }
 
     function patients()
