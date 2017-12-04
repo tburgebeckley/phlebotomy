@@ -1,0 +1,74 @@
+    <form id="visitForm" method="POST" action='{path}'>
+        <fieldset>
+            <legend>Log New Visit</legend>
+            <p>
+                <label for="patient">Patient</label><br>
+                <select name='patient' id="patient" required="required">
+{patients}
+                </select>
+            </p>
+            <p>
+                <label for="phleb">Phlebotomist</label><br>
+                <select name='phleb' id="phleb" required="required">
+{phlebotomists}
+                </select>                
+            </p>
+            <p>
+                <label for="testType">Test Type</label><br>
+                <select name='testList' id='testList' required="required">
+                    <option value='CBC'>Complete Blood Count'</option>
+                    <option value='RBC'>Red Blood Cell Count</option>
+                    <option value='WBC'>White Blood Cell Count</option>
+                    <option value='P'>Platelets</option>
+                    <option value='Hglob'>Hemoglobin</option>
+                    <option value='Hcrit'>Hematocrit</option>
+                    <option value='MCV'>Mean Corpuscular Volume</option>
+                    <option value='BMP'>Basic Metabolic Panel</option>
+                    <option value='Gluc'>Blood Glucose</option>
+                    <option value='C'>Calcium</option>
+                    <option value='E+'>Electrolytes</option>
+                    <option value='BE'>Blood Enzymes</option>
+                    <option value='Trop'>Tropopin</option>
+                    <option value='Creat'>Creatine Kinase</option>
+                    <option value='Lipo'>Lipoprotein Panel</option>
+                    <option value="BC">Blood Clotting</option>
+                </select>
+            </p>
+            <p>
+                <label for="network">Network</label><br>
+                <select name='network' id='network' required="required">
+                    <option value='NE'>NorthEast</option>
+                    <option value='MW'>MidWest</option>
+                    <option value='SW'>SouthWest</option>
+                    <option value='W'>West</option>
+                    <option value='SE'>SouthEast</option>
+                    <option value='NW'>NorthWest</option>
+                </select>
+            </p>
+            <p>
+                <label for="date">Visit Date</label><br>
+                <input type="date" name='date' id='date' min="2000-01-01" max="{today}" required="required">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Invoice</legend>
+            <p>
+                <label for="amt">Billed Amount</label><br>
+                <input pattern="\d?\d\.\d\d" maxlength=5 size=5 name='amt' id='amt' required="required">
+            </p>
+
+            <p>
+                <label for="billDate">Visit Date</label><br>
+                <input type="date" name='billDate' id='billDate' min="2000-01-01" max="{today}" required="required">
+            </p>
+            <p>
+                <label for='message'>Message</label>
+                <input maxlength="100" name='msg' id='msg'>
+            </p>
+            <p>
+                <label for='miles'>Miles Driven</label>
+                <input type='number' max='1000' id='miles' name='miles' required="required">
+            </p>
+        </fieldset>
+        <input type='submit' value='Log Visit'>
+    </form>
