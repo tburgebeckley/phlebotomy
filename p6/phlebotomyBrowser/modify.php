@@ -2,6 +2,10 @@
 
 include ('function.php');
 
+
+pageHeader('Modify Tables', 'modifyPage');
+$page = file_get_contents('../html/modify.html');
+echo $page;
 if(isset($_POST['insuranceName']))
 {
     update($_POST['insuranceName'], $_POST['newInsuranceName']);
@@ -10,10 +14,16 @@ else if(isset($_POST['startDate']))
 {
     delete($_POST['startDate']);
 }
-else
+else if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-    echo "nothing was set";
+
 }
+else 
+{
+    echo "nothing was set\n";
+}
+
+pageFooter();
 
 function update($insuranceName, $newInsuranceName)
 {
