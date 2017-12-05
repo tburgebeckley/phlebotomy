@@ -19,7 +19,6 @@
         }
 
     }
-    echo 'WHERE AM I?';
     $form = file_get_contents('../html/activitylog.html');
     $form = format($form, array('max'=>date('Y-m-d'), 'action'=>$_SERVER['PHP_SELF'], 'fromVal'=>$fromDate, 'toVal'=>$toDate));
     echo $form, $report;

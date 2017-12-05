@@ -1,7 +1,6 @@
 <?php
-    $templatepath = 
     require_once ("../../dbconfig.php");
-    error_reporting(1);
+    error_reporting(0g);
     function format($msg, $vars)
     {
         $vars = (array)$vars;
