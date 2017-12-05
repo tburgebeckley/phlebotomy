@@ -31,8 +31,9 @@ function update($insuranceName, $newInsuranceName)
     $insuranceName = test_input($insuranceName);
     $newInsuranceName = test_input($newInsuranceName);
     $sql = "UPDATE insuranceCompany SET name = '$newInsuranceName' WHERE name = '$insuranceName'";
-
-    $result = pdo_exec($pdo, $sql);
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->rowCount();
 
     if($result < 1)
     {
@@ -51,9 +52,9 @@ function delete($startDate)
     $pdo = pdo_construct();
     $startDate = test_input($startDate);
     $sql = "DELETE FROM invoice WHERE message = 'waived' AND billedDate < '$startDate'";
-
-    $result = pdo_exec($pdo, $sql);
-    echo $startDate;
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->rowCount();
     echo $result . " item(s) deleted.";
     $pdo = null;
 }
