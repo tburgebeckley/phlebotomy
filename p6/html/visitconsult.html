@@ -1,0 +1,15 @@
+        <form action="{action}" method="POST" id="visitconsult">
+            <fieldset>
+                <legend>Insurance Company Net Billings by Patient</legend>
+                <p>
+                    This report shows the top twenty number of total visits for a given patient, compared to consultations.<br>
+                    Entering a threshold below will limit those patients who have less than that number of consultations.<br>
+                </p>
+                <p>
+                    <input type="number" name='having' max='10' min='0' value='{val}'>
+                </p>
+                <p>
+                    <input type=submit value="View Report">
+                </p>
+            </fieldset>
+        </form>

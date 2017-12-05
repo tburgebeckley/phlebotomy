@@ -1,0 +1,16 @@
+        <form action="{action}" method="POST" id="insurance">
+            <fieldset>
+                <legend>Insurance Company Net Billings by Patient</legend>
+                <p>
+                    This report shows the top twenty invoice totals for insurance companies with a high total invoice for a given patient.<br>
+                    Entering a threshold below will limit those patients who have paid above that amount to one insurance company for 1 or more visits. <br>
+                    More interesting data sets result from limiting above 1500.<br>
+                </p>
+                <p>
+                    <input type="number" name='having' max='{max}' min='1' value='{val}'>
+                </p>
+                <p>
+                    <input type=submit value="View Report">
+                </p>
+            </fieldset>
+        </form>
