@@ -1,6 +1,6 @@
 <?php
     require_once ("../../dbconfig.php");
-    error_reporting(0g);
+    error_reporting(1);
     function format($msg, $vars)
     {
         $vars = (array)$vars;

@@ -27,6 +27,8 @@
 
         $pdo = pdo_construct();
 
+        $amt = (float)amt;
+
         $visit_query = 'INSERT INTO visit (`network`,`visitDate`, `testType`, `patient$id`) VALUES ("{network}",DATE "{visitDate}", "{testType}",{id})';
         $idresult = pdo_query($pdo, 'SELECT `id` FROM patient WHERE `name` = "' . $patient .'"');
         $row = $idresult->fetch();
