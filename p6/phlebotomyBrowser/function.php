@@ -37,7 +37,11 @@
         echo $footerString;
     }
 
-    
+    function validateDate($date, $format = 'Y-m-d')
+    {
+        $d = strtotime($date);
+        return ($date == date($format,$d));
+    }
     /* Sanitizes the input fields of unwanted data and does HTML conversion of special characters*/
     function test_input($data) {
         $data = trim($data);

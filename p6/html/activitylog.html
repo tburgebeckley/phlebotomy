@@ -1,0 +1,20 @@
+    <form action="{action}" method="POST" id="activityForm">
+        <fieldset>
+            <legend>Phlebotomist Visit Activity Report</legend>
+            <p>
+                This report shows the activity of each phlebotomist according to visit count.<br>
+                The date selectors allow you to choose a subset of dates to report on.<br>
+            </p>
+            <p>
+                <label for='fromDate'>From: </label>
+                <input type="date" id='fromDate' name='fromDate' max='{max}' min='1990-01-01' value='{fromVal}'>
+            </p>
+            <p>
+                <label for='toDate'>To: </label>
+                <input type="date" id='toDate' name='toDate' max='{max}' min='1990-01-01' value='{toVal}'>
+            </p>
+            <p>
+                <input type=submit value="View Report">
+            </p>
+        </fieldset>
+    </form>
