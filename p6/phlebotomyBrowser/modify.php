@@ -15,18 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 else if(isset($_POST['insuranceName']))
 {
     update($_POST['insuranceName'], $_POST['newInsuranceName']);
+    echo "<p><a href='index.php'>Home</a></p>";
 }
 else if(isset($_POST['startDate']))
 {
     delete($_POST['startDate']);
+    echo "<p><a href='index.php'>Home</a></p>";
 }
 
 else 
 {
     echo "nothing was set\n";
 }
-
-
 
 pageFooter();
 
@@ -42,7 +42,7 @@ function update($insuranceName, $newInsuranceName)
 
     if($result < 1)
     {
-        echo "0 items updated! Make sure you entered a valid Insurance Name!";
+        echo "0 items updated! Make sure you did not enter the same Insurance Name.";
     }
     else
     {
