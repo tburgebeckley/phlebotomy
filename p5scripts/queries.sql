@@ -5,21 +5,24 @@ WHERE patient.id = visit.`patient$id` AND
       invoice.id = billedTo.`invoice$id`
 GROUP BY patient.name, `insuranceCompany$name`
 HAVING sum(billedAmt) > 1700
+ORDER BY sum(billedAmt) DESC
+LIMIT 20
 
 SELECT patient.name, patient.DOB,
 COALESCE( c.cnt, 0 ) AS consultations, 
 COALESCE( v.cnt, 0 ) AS visits
 FROM patient
-LEFT JOIN (SELECT count(*) as consultations, `patient$id`
+LEFT JOIN (SELECT count(*) as cnt, `patient$id`
            FROM consults
            GROUP BY `patient$id`) c
            ON c.`patient$id` = patient.id
-LEFT JOIN (SELECT count(*) as visits, `patient$id`
+LEFT JOIN (SELECT count(*) as cnt, `patient$id`
            FROM visit
            GROUP BY `patient$id`) v
            ON v.`patient$id` = patient.id
-ORDER BY patient.name
 HAVING 4 > consultations
+ORDER BY visits
+LIMIT 20
 
 SELECT count(*) as Q42009Visits, `phlebotomist$name` as PhlebName, max(visit.visitDate) as LatestVisit, min(visit.visitDate) as EarliestVisit
 FROM visit, performs 
@@ -30,6 +33,7 @@ AND visit.id IN (SELECT v.id
                  AND v.visitDATE > DATE '2009-08-31') 
 GROUP BY `phlebotomist$name` 
 ORDER BY LatestVisit
+LIMIT 20
 
 ALTER TABLE `visit` ADD INDEX(`visitDate`)
 
