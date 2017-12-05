@@ -4,9 +4,15 @@ include ('function.php');
 
 
 pageHeader('Modify Tables', 'modifyPage');
-$page = file_get_contents('../html/modify.html');
-echo $page;
-if(isset($_POST['insuranceName']))
+$form = file_get_contents('../html/modify.html');
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET')
+{
+    $insurance = insurance();
+    $page = format($form, array('path'=>$_SERVER['PHP_SELF'], 'insurance'=>$insurance));
+    echo $page;
+}
+else if(isset($_POST['insuranceName']))
 {
     update($_POST['insuranceName'], $_POST['newInsuranceName']);
 }
@@ -14,14 +20,13 @@ else if(isset($_POST['startDate']))
 {
     delete($_POST['startDate']);
 }
-else if ($_SERVER['REQUEST_METHOD'] == 'GET')
-{
 
-}
 else 
 {
     echo "nothing was set\n";
 }
+
+
 
 pageFooter();
 
@@ -59,5 +64,20 @@ function delete($startDate)
     $pdo = null;
 }
 
+function insurance()
+{
+    $pdo = pdo_construct();
+
+    $sql = "SELECT name FROM insuranceCompany ORDER BY name";
+    $result = pdo_query($pdo, $sql);
+    $options = "";
+    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+    {
+        $temp = "\t\t\t\t\t<option value='{}'>{}</option>\n";
+        $options = $options . format($temp, array($row['name'], $row['name']));
+    }
+
+    return $options;
+}
 
 ?>
