@@ -1,5 +1,5 @@
 INSERT INTO consults (`patient$id`, `doctor$name`, `doctor$practiceName`)
-SELECT p.id, d.name, d.practiceName FROM patient as p, doctor as d WHERE d.name LIKE "%F%" AND p.id = FLOOR(RAND()*(100000-1)+1)
+SELECT p.id, d.name, d.practiceName FROM patient as p, doctor as d WHERE d.name LIKE "%F%" AND p.id = FLOOR(RAND()*(10000-1)+1)
 
 UPDATE insuranceCompany SET name = 'Aeetna' WHERE name = 'Aetna'
 
